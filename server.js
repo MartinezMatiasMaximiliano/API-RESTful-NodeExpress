@@ -41,7 +41,7 @@ app.post("/frutas/agregar/", (req, res) => {
 
 //PUT 
 
-app.put("frutas/modificar/id/:id", (req, res) => {
+app.put("/frutas/modificar/id/:id", (req, res) => {
     const idBuscado = parseInt(req.params.id)
     const encontrado = DB.findIndex((value, index, array) => value.id === idBuscado)
     if (encontrado != -1) {
@@ -60,7 +60,7 @@ app.put("frutas/modificar/id/:id", (req, res) => {
 
 
 //DELETE
-app.delete("frutas/eliminar/id/:id", (req, res) => {
+app.delete("/frutas/eliminar/id/:id", (req, res) => {
     const idBuscado = parseInt(req.params.id)
     const encontrado = DB.find((value, index, array) => value.id === idBuscado)
     if (encontrado) {
